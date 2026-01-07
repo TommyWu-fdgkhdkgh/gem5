@@ -39,7 +39,7 @@ DebugFlag('IntPin')
 DebugFlag('IsaFake')
 DebugFlag('DMA')
 
-SimObject('Platform.py', sim_objects=['Platform'])
+SimObject('Platform.py', sim_objects=['Platform', 'SimplePlatform'])
 Source('platform.cc')
 
 SimObject('BadDevice.py', sim_objects=['BadDevice'])

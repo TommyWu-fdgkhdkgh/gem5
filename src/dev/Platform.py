@@ -40,3 +40,9 @@ class Platform(SimObject):
     # for platforms using device trees to set properties of CPU nodes
     def annotateCpuDeviceNode(self, cpu, state):
         pass
+
+
+class SimplePlatform(Platform):
+    type = "SimplePlatform"
+    cxx_header = "dev/platform.hh"
+    cxx_class = "gem5::SimplePlatform"

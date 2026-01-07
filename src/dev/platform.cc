@@ -47,4 +47,15 @@ Platform::clearPciInt(int line)
    panic("No PCI interrupt support in platform.");
 }
 
+SimplePlatform::SimplePlatform(const Params &p) : Platform(p)
+{}
+
+void
+SimplePlatform::postConsoleInt()
+{ panic("No postConsoleInt support in simple platform."); }
+
+void
+SimplePlatform::clearConsoleInt()
+{ panic("No clearConsoleInt support in simple platform."); }
+
 } // namespace gem5

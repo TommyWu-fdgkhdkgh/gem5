@@ -38,6 +38,7 @@
 #include <set>
 
 #include "params/Platform.hh"
+#include "params/SimplePlatform.hh"
 #include "sim/sim_object.hh"
 
 namespace gem5
@@ -76,6 +77,26 @@ class Platform : public SimObject
      * Clear a posted PCI->CPU interrupt
      */
     virtual void clearPciInt(int line);
+};
+
+class SimplePlatform : public Platform
+{
+  public:
+    System *system;
+
+    typedef SimplePlatformParams Params;
+    SimplePlatform(const Params &p);
+    virtual ~SimplePlatform() = default;
+
+    /**
+     * Cause the cpu to post a serial interrupt to the CPU.
+     */
+    void postConsoleInt() override;
+
+    /**
+     * Clear a posted CPU interrupt
+     */
+    void clearConsoleInt() override;
 };
 
 } // namespace gem5
