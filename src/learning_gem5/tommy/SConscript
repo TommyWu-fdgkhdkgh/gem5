@@ -2,8 +2,11 @@ Import('*')
 
 SimObject('ExampleObject.py', sim_objects=['ExampleObject'])
 SimObject('TimeExampleObject.py', sim_objects=['TimeExampleObject'])
+SimObject('PortExampleObject.py', sim_objects=['PortExampleObject'])
 
 Source('example_object.cc')
 Source('time_example_object.cc')
+Source('port_example_object.cc')
 
 DebugFlag('TimeExampleObject')
+DebugFlag('PortExampleObject')
