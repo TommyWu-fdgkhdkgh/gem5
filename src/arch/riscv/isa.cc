@@ -804,7 +804,9 @@ ISA::setMiscReg(RegIndex idx, RegVal val)
                 SATP cur_val = readMiscRegNoEffect(idx);
                 SATP new_val = val;
                 if (new_val.mode != AddrXlateMode::BARE &&
-                    new_val.mode != AddrXlateMode::SV39)
+                    new_val.mode != AddrXlateMode::SV39 &&
+                    new_val.mode != AddrXlateMode::SV48 &&
+                    new_val.mode != AddrXlateMode::SV57)
                     new_val.mode = cur_val.mode;
 
                 // TLB flush can be elided here
@@ -825,7 +827,9 @@ ISA::setMiscReg(RegIndex idx, RegVal val)
                 SATP cur_val = readMiscRegNoEffect(idx);
                 SATP new_val = val;
                 if (new_val.mode != AddrXlateMode::BARE &&
-                    new_val.mode != AddrXlateMode::SV39)
+                    new_val.mode != AddrXlateMode::SV39 &&
+                    new_val.mode != AddrXlateMode::SV48 &&
+                    new_val.mode != AddrXlateMode::SV57)
                     new_val.mode = cur_val.mode;
 
                 setMiscRegNoEffect(idx, new_val);
@@ -868,7 +872,9 @@ ISA::setMiscReg(RegIndex idx, RegVal val)
                 SATP new_val = val;
 
                 if (new_val.mode != AddrXlateMode::BARE &&
-                    new_val.mode != AddrXlateMode::SV39)
+                    new_val.mode != AddrXlateMode::SV39 &&
+                    new_val.mode != AddrXlateMode::SV48 &&
+                    new_val.mode != AddrXlateMode::SV57)
                 {
                     new_val.mode = cur_val.mode;
                 }
