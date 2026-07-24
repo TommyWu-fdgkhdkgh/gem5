@@ -59,6 +59,7 @@ class O3_ARM_v7a_Complex_Int(FUDesc):
 class O3_ARM_v7a_FP(FUDesc):
     opList = [
         OpDesc(opClass="SimdAdd", opLat=4),
+        OpDesc(opClass="SimdPredAlu", opLat=3),
         OpDesc(opClass="SimdAddAcc", opLat=4),
         OpDesc(opClass="SimdAlu", opLat=4),
         OpDesc(opClass="SimdCmp", opLat=4),
